@@ -1,0 +1,27 @@
+Sean's work
+
+function getMostPopularBooks(books) {
+    let popularBooks = [];
+    books.forEach((book) => {
+      let nameCount = {name: book.title, count: book.borrows.length};
+      popularBooks.push(nameCount);
+    });
+    let sorted = popularBooks.sort((bookA, bookB) => bookB.count - bookA.count);
+    let topFive = sorted.slice(0, 5);
+    return topFive;
+  }
+
+
+  function getBorrowersForBook(book, accounts) {
+    let borrowedBooks = [];
+    const borrowed = book.borrows;
+    borrowed.forEach((book) => {
+      let accountMatch = accounts.find((account) => account.id === book.id);
+      let matchingObject = accountMatch;
+      matchingObject['returned'] = book.returned;
+      borrowedBooks.push(matchingObject);
+    }
+    )
+    let topTen = borrowedBooks.slice(0, 10);
+    return topTen;
+  }
