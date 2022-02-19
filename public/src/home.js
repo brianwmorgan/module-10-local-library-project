@@ -1,20 +1,45 @@
+///////////////////////////////////////////////////////////////////////////
+
+
+// simply return the number of objects in the 'books' array by
+//    utilizing the .length method
+
 function getTotalBooksCount(books) {
-  return books.length
-}
+  return books.length;
+};
+
+
+///////////////////////////////////////////////////////////////////////////
+
+
+// simply return the number of objects in the 'accounts' array by
+//    utilizing the .length method
 
 function getTotalAccountsCount(accounts) {
-  return accounts.length
-}
+  return accounts.length;
+};
+
+
+///////////////////////////////////////////////////////////////////////////
+
+
+// declare a new accumulator variable (borrowed books)
+// loop through the 'books' array
+// if a book is currently borrowed (the first 'returned' value is 'false'),
+//    add '1' to the accumulator variable (and return it)
 
 function getBooksBorrowedCount(books) {
-  let borrowedBooks = 0
+  let borrowedBooks = 0;
   for (let i = 0; i < books.length; i++) {
     if (books[i].borrows[0].returned === false) {
       borrowedBooks += 1
-    }
-  }
-  return borrowedBooks
-}
+    };
+  };
+  return borrowedBooks;
+};
+
+
+///////////////////////////////////////////////////////////////////////////
 
 
 function getMostCommonGenres(books) {
@@ -41,7 +66,10 @@ let genresByQuantity = arrayOfNewGenre.sort( (book1, book2) => book2.count - boo
 let topGenres = genresByQuantity.slice(0,5);
 return topGenres;
 
-}
+};
+
+
+///////////////////////////////////////////////////////////////////////////
 
 
 function getMostPopularBooks(books) {
@@ -54,7 +82,11 @@ function getMostPopularBooks(books) {
     bookB.count - bookA.count);
   let mostBorrowedBooks = booksSortedByBorrowAmounts.slice(0,5);
   return mostBorrowedBooks
-}
+};
+
+
+///////////////////////////////////////////////////////////////////////////
+
 
 function getMostPopularAuthors(books, authors) {
   let popularAuthors = [];
@@ -70,7 +102,11 @@ function getMostPopularAuthors(books, authors) {
   let topFive = sorted.slice(0, 5);
   
   return topFive;
-}
+};
+
+
+///////////////////////////////////////////////////////////////////////////
+
 
 module.exports = {
   getTotalBooksCount,
