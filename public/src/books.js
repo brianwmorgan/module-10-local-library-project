@@ -1,15 +1,44 @@
+///////////////////////////////////////////////////////////////////////////
+
+
+//you can use a for loop (see below), 
+//but the .find() method is more concise and does the same thing
+
+/*
 function findAuthorById(authors, id) {
   for (let i = 0; i < authors.length; i++) {
     if (authors[i].id === id) {
-      return authors[i]
-    }
-  }
-}
+      return authors[i];
+    };
+  };
+};
+*/
+
+function findAuthorById(authors, id) {
+  return authors.find(author => author.id === id);
+};
+
+
+///////////////////////////////////////////////////////////////////////////
+
+
+// the first works, but the second is more concise: rather than defining
+//    a new variable and then returning it, simply return the result
+
+/*
+function findBookById(books, id) {
+  const matchingBook = books.find(book => book.id === id);
+  return matchingBook;
+};
+*/
 
 function findBookById(books, id) {
-  const matchingBook = books.find( (book) => book.id === id);
-  return matchingBook;
-}
+  return books.find(book => book.id === id);
+};
+
+
+///////////////////////////////////////////////////////////////////////////
+
 
 function partitionBooksByBorrowedStatus(books) {
   const booksCheckedOut = [];
@@ -25,8 +54,13 @@ function partitionBooksByBorrowedStatus(books) {
   booksByStatus.push(booksCheckedOut);
   booksByStatus.push(booksReturned);
   return booksByStatus;
-}
+};
 
+
+///////////////////////////////////////////////////////////////////////////
+
+
+// *** is there a better way to go about getting the desired result? ***
 
 function getBorrowersForBook(book, accounts) {
   let borrowedBooks = [];
@@ -38,10 +72,13 @@ function getBorrowersForBook(book, accounts) {
     macthingObject['returned'] = book.returned;
     borrowedBooks.push(macthingObject);
     }
-  )
+  );
   let tenBorrowerAccounts = borrowedBooks.slice(0,10);
   return tenBorrowerAccounts;
-}
+};
+
+
+///////////////////////////////////////////////////////////////////////////
 
 
 module.exports = {
