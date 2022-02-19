@@ -72,6 +72,15 @@ return topGenres;
 ///////////////////////////////////////////////////////////////////////////
 
 
+// create a new, empty array (mostPopularBooks)
+// for each book in the 'books' array, create a new object that has two
+//    keys ('name' and 'count') which will respectively have the values of
+//    each book's title and the number of borrows
+// push each of these new objects into the newly defined array
+// create a new array (booksSortedByBorrowAmounts) that is the sorted version
+//    of the old array - sorted from highest to lowest 'count'
+// slice the array so it contains no more than 5 elements and return it
+
 function getMostPopularBooks(books) {
   const mostPopularBooks = [];
   books.forEach( (book) => {
@@ -81,7 +90,7 @@ function getMostPopularBooks(books) {
   let booksSortedByBorrowAmounts = mostPopularBooks.sort( (bookA, bookB) =>
     bookB.count - bookA.count);
   let mostBorrowedBooks = booksSortedByBorrowAmounts.slice(0,5);
-  return mostBorrowedBooks
+  return mostBorrowedBooks;
 };
 
 
