@@ -61,6 +61,7 @@ function getTotalNumberOfBorrows(account, books) {
 // for each book object, check if the current status is 'checked out'
 //      AND if the borrower id matches the given account id
 // if both conditions are met, add the whole book object to the new array
+
 function getCheckedOutBooks(account, books) {
   const booksCheckedOut = [];
   books.forEach(book => {
